@@ -1,0 +1,21 @@
+/**
+*Gestion des imports des scss
+**/
+
+//Utils
+@import './utils/mixins';
+@import './utils/variables';
+
+//Base
+@import './base/global';
+
+
+//Components
+@import '../../../components/footer/footer';
+@import '../../../components/header/header';
+@import '../../../components/card/card';
+
+
+
+//Pages
+@import '../../../pages/home/home';
