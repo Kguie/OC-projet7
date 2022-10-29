@@ -5,47 +5,20 @@
 .home {
     @include center-box;
     flex-direction: column;
+    margin-top: 16px;
     width: 89.52%;
     letter-spacing: 0em;
+    margin-bottom: 168px;
 
     @include desktop-only {
         width: 86%;
+        margin-top: 68px;
+        margin-bottom: 200px;
     }
 
     //Ajout de la bannière avec un filtre noir dans son after afin d'assombrir l'image
     &__banner {
-        display: flex;
-        width: 100%;
-        background-image: url("../../assets/home-banner-s.webp");
-        background-repeat: no-repeat;
-        background-size: cover;
-        min-height: 111px;
-        border-radius: 10px;
-        color: #ffffff;
-        position: relative;
-        overflow: hidden;
-        margin-top: 16px;
-        z-index: -2;
-
-        @include tablet-only {
-            background-image: url("../../assets/home-banner.webp");
-
-            border-radius: 25px;
-            min-height: 223px;
-            justify-content: space-around;
-        }
-
-        &::after {
-            content: " ";
-            background: #000000;
-            opacity: 0.3;
-            mix-blend-mode: darken;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            z-index: -1;
-        }
+        @include banner;
 
         &__text {
             font-size: 24px;
@@ -64,6 +37,7 @@
         }
     }
 
+    //Style du conteneur des cartes de logement
     &__cards-wrapper {
         @include center-box;
         width: 100%;
@@ -75,12 +49,12 @@
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-around;
-            column-gap: 50px;
+            gap: 50px 5%;
             width: auto;
+            padding: 50px 4.24%;
         }
 
         @include desktop-only {
-            padding: 56px 4%;
             background-color: $clr-bgLight;
             justify-content: center;
             border-radius: 25px;

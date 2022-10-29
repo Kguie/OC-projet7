@@ -1,0 +1,63 @@
+/**
+*Style de la page erreur
+**/
+
+.error {
+    @include center-box;
+    color: $clr-primary;
+    flex-direction: column;
+    width: 69%;
+    text-align: center;
+    letter-spacing: 0em;
+    margin-bottom: 235px;
+
+    @include tablet-only {
+        margin-bottom: 160px;
+    }
+
+    //404
+    &__number {
+
+        font-size: 96px;
+        font-weight: 700;
+        line-height: 137px;
+        margin-top: 200px;
+
+        @include tablet-only {
+            font-size: 288px;
+            line-height: 411px;
+            margin-top: 175px;
+        }
+    }
+
+    //Texte de la page
+    &__text {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 26px;
+        margin-top: 25px;
+
+        @include tablet-only {
+            margin-top: 95px;
+            font-size: 36px;
+            line-height: 51px;
+        }
+    }
+
+    //Lien menant vers l'accueil
+    &__link {
+
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        margin-top: 133px;
+        text-decoration-line: underline;
+        color: inherit;
+
+        @include tablet-only {
+            margin-top: 182px;
+            font-size: 18px;
+            line-height: 26px;
+        }
+    }
+}

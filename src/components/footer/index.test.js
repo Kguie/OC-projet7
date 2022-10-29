@@ -6,13 +6,6 @@ import Footer from './'
 import { render, screen } from '@testing-library/react'
 
 describe('Footer', () => {
-    it('Should render without crashing', async () => {
-        render(
-            <Footer />
-
-        )
-    })
-
     it('Should render with the expected text', async () => {
         render(
             <Footer />

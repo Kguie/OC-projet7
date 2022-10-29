@@ -9,11 +9,6 @@
     flex-direction: column;
     width: 100%;
     letter-spacing: 0em;
-    margin-top: 16px;
-
-    @include desktop-only {
-        margin-top: 63px;
-    }
 
     &__logo {
         width: 122px;

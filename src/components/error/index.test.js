@@ -1,15 +1,15 @@
 /**
- * Test du component Header
+ * Test du component Error
  **/
 
-import Header from './'
+import Error from '.'
 import { screen } from '@testing-library/react'
 import { render } from '../../utils/test'
 
-describe('Header', () => {
+describe('Error', () => {
     it('Should render with the expected text', async () => {
-        render(<Header />)
-        const expectedText = screen.getByText(/Accueil/i)
+        render(<Error />)
+        const expectedText = screen.getByText(/La page que vous demandez n'existe pas/i)
         expect(expectedText).toBeInTheDocument()
     })
 })

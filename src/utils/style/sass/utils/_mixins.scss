@@ -32,3 +32,39 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+
+//Mixin pour les banners des pages home et about
+@mixin banner($min: 111px, $urlMobile: url("../../assets/home-banner-s.webp"), $urlDesktop: url("../../assets/home-banner.webp")) {
+    min-height: $min ;
+    border-radius: 10px;
+    display: flex;
+    width: 100%;
+    background-image: $urlMobile ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    z-index: -2;
+    color: #ffffff;
+
+    @include tablet-only {
+        background-image: $urlDesktop ;
+        border-radius: 25px;
+        min-height: 223px;
+        justify-content: space-around;
+    }
+
+
+    &::after {
+        content: " ";
+        background: #000000;
+        opacity: 0.3;
+        mix-blend-mode: darken;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: -1;
+    }
+}

@@ -3,7 +3,7 @@
  */
 import { Link } from "react-router-dom"
 
-interface props {
+type props = {
     cover: string,
     title: string,
     id: string
@@ -16,8 +16,9 @@ function Card({ cover, title = `Titre de la location`, id }: props) {
 
 
     return (
+        // Affiche la carte avec son titre,si il n'ya pas de cover,le background avec la couleur primaire est visible,si pas de titre "titre de la location" apparaît par défaut
         <Link to={'/lodging/' + id} className="card">
-            <img className="card__picture" src={cover} alt={'Photo de couverture du logement ' + id} />
+            {cover && <img className="card__picture" src={cover} alt={'Photo de couverture du logement ' + id} />}
             <h2 className="card__title">{title}</h2>
         </Link>
     )

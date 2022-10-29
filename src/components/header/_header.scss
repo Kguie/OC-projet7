@@ -45,10 +45,6 @@
                 line-height: 34px;
             }
 
-            &:active {
-                text-decoration: none;
-            }
-
             //Ajout de l'effet underline au survol avec le ::after
             &::after {
                 text-decoration-line: underline;

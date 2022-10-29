@@ -10,7 +10,7 @@ import lodgingData from "../../data/logements.json"
 function Home() {
 
   return (
-    <div className="home">
+    <section className="home">
       <div className="home__banner">
         <h1 className="home__banner__text">Chez vous, partout et ailleurs</h1>
       </div>
@@ -24,7 +24,7 @@ function Home() {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

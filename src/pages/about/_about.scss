@@ -1,0 +1,60 @@
+/**
+*Style de la page A propos
+**/
+
+.about {
+    @include center-box;
+    flex-direction: column;
+    margin-top: 16px;
+    width: 89.52%;
+    margin-bottom: 168px;
+
+    @include tablet-only {
+        width: 86%;
+        margin-top: 49px;
+        margin-bottom: 200px;
+    }
+
+    //Mixin pour la bannière avec la hauteur minimal,l'url de l'image pour mobile et l'url de l'image pour desktop
+    &__banner {
+        @include banner(223px, url("../../assets/about-banner-s.webp"), url("../../assets/about-banner.webp"));
+
+    }
+
+    &__accordions-wrapper {
+        @include center-box;
+        flex-direction: column;
+        margin-top: 19px;
+        width: 100%;
+        gap: 20px;
+
+        @include tablet-only {
+            width: 82.5%;
+            gap: 33px;
+        }
+
+        //Accordions dans About
+        .accordion {
+            &__header {
+                &__category {
+                    @include tablet-only {
+                        font-size: 24px;
+                        line-height: 34px;
+                    }
+                }
+            }
+
+
+            &__content {
+                padding: 15px 7px 50px 11px;
+
+                @include tablet-only {
+                    padding: 27px 27px 18px 18px;
+                    font-size: 24px;
+                    line-height: 34px;
+                }
+            }
+        }
+
+    }
+}

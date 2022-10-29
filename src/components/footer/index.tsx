@@ -4,7 +4,7 @@
 import darkLogo from '../../assets/dark-logo.svg';
 
 /**
- * Affiche le footer
+ * Affiche le footer avec le logo et le texte
  */
 function Footer() {
 
