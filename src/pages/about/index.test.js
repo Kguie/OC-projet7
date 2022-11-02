@@ -7,6 +7,8 @@ import { screen, fireEvent } from '@testing-library/react'
 import { render } from '../../utils/test'
 
 
+
+//Tests de l'accordion avec le contenu de la page about
 describe('About and accordion', () => {
     test('Should render without crash', async () => {
         render(
@@ -14,7 +16,7 @@ describe('About and accordion', () => {
         )
 
         //Le texte recherché n’apparaît pas avant le clic sur le bouton
-        const toggleBtn = screen.getAllByRole('img')[0]
+        const toggleBtn = screen.getAllByTestId('header')[0]
         const nonExpectedText = screen.queryByText(/Les annonces postées sur Kasa garantissent une fiabilité totale/i)
         expect(nonExpectedText).toBeNull()
 

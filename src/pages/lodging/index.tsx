@@ -8,24 +8,30 @@ import Carousel from "../../components/carousel"
 import Accordion from "../../components/accordion"
 import Tag from "../../components/tag"
 import { useGetLodgingById } from "../../utils/hooks"
+import { useEffect } from "react"
 
 /**
- * Affiche la page lodging qui présente un seul logement * 
+ * Affiche la page lodging qui présente un seul logement 
  */
 function Lodging() {
-
     //Récupération de l'id   
     const { id } = useParams()
 
     //Récupération des données du logement recherché avec l'id et redirection vers la page d'erreur si l'id n'est pas retrouvé
     const lodgingFound = useGetLodgingById(id)
 
+    //Titre de la page
+    useEffect(() => {
+        document.title = lodgingFound ? lodgingFound.title : 'Titre de la location'
+    }, [lodgingFound])
 
     return (
 
         <section className="lodging">
 
+            {/* Intégration du Component Carousel */}
             <Carousel pictures={lodgingFound && lodgingFound.pictures ? lodgingFound.pictures : []} />
+
             <div className="lodging__header">
                 <div className="lodging__header__presentation">
                     <span className="lodging__header__presentation__title">
@@ -79,16 +85,13 @@ function Lodging() {
                     </div>
                 </div>
             </div>
+
             {/* Utilisation des accordions avec une liste pour équipements gérée dans le component  */}
             <div className="lodging__accordions-wrapper">
                 <Accordion category="Description" content={lodgingFound && lodgingFound.description} />
                 <Accordion category="Équipements" content={lodgingFound && lodgingFound.equipments} />
-
             </div>
         </section>
     )
-
-
 }
-
 export default Lodging

@@ -2,16 +2,25 @@
  * Gestion de la page A propos
  **/
 import Accordion from "../../components/accordion"
+import Banner from "../../components/banner"
+import { useEffect } from "react"
 
+/**
+ * Affichage de la page About
+ */
 function About() {
+    //Titre de la page
+    useEffect(() => {
+        document.title = ' A propos'
+    }, [])
 
     return (
         <section className="about">
-            <div className="about__banner"></div>
+            {/* Banière sans texte */}
+            <Banner text={null} />
             <div className="about__accordions-wrapper">
                 <Accordion category="Fiabilité"
                     content="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes."
-
                 />
                 <Accordion category="Respect"
                     content="La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme."
@@ -27,8 +36,6 @@ function About() {
             </div>
         </section>
     )
-
-
 }
 
 export default About

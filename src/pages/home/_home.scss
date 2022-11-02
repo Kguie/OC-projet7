@@ -16,25 +16,44 @@
         margin-bottom: 200px;
     }
 
-    //Ajout de la bannière avec un filtre noir dans son after afin d'assombrir l'image
-    &__banner {
-        @include banner;
+    //Ajout de la bannière et de son titre
+    .banner {
+        height: 111px;
+        border-radius: 10px;
 
-        &__text {
+        &::before {
+            background-image: url(../../assets/home-banner-s.webp);
+            border-radius: 10px;
+
+            @include tablet-only {
+                background-image: url(../../assets/home-banner.webp);
+                border-radius: 25px;
+            }
+        }
+
+        @include tablet-only {
+            height: 223px;
+            border-radius: 25px;
+        }
+
+        &__title {
+            margin-left: 16px;
             font-size: 24px;
             font-weight: 500;
             line-height: 24px;
-            margin-left: 4.8%;
-            width: 64.55%;
             align-self: center;
+            color: #ffffff;
+            width: 65%;
+            z-index: 1;
 
-            @include desktop-only {
-                margin-left: 0;
+            @include tablet-only {
                 text-align: center;
                 font-size: 48px;
-                line-height: 142.6%;
+                line-height: 68px;
+                margin-left: 0
             }
         }
+
     }
 
     //Style du conteneur des cartes de logement
@@ -51,7 +70,8 @@
             justify-content: space-around;
             gap: 50px 5%;
             width: auto;
-            padding: 50px 4.24%;
+            padding: 56px 4.24%;
+            margin-top: 43px;
         }
 
         @include desktop-only {
@@ -60,6 +80,7 @@
             border-radius: 25px;
         }
 
+        //Ajout d'un media queries pour un meilleur visuel des cartes quand on passe à 3 colonnes 
         @media screen and (min-width: 1416px) {
             justify-content: flex-start;
         }

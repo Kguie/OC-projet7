@@ -12,16 +12,20 @@ import lodgingData from '../../data/logements.json'
  * @param {string} id du logement 
  * @returns {object|error} les données du logement ou redirection vers la page erreur 
  */
-export function useGetLodgingById(id: any) {
+export function useGetLodgingById(id: string | null | undefined) {
     const lodgingFound = lodgingData.find((lodging,) => lodging.id === id);
     const navigate = useNavigate();
 
     useEffect(() => {
+
+        //L'id rentré en argument n'est pas retrouvé dans la base de données
         if (!lodgingFound) {
 
             navigate("/error");
         }
     }, [lodgingFound, navigate]);
+
+    //L'id retrouvé dans las basse de données est retourné
     if (lodgingFound) {
         return lodgingFound
     }

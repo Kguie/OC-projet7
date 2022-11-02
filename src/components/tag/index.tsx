@@ -6,6 +6,10 @@ type props = {
     title: string,
 }
 
+/**
+ * Affiche le tag avec son titre au centre
+ * @params {string} titre du tag
+ */
 function Tag({ title }: props) {
 
     return (

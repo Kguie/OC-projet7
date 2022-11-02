@@ -6,12 +6,13 @@
     @include center-box;
     flex-direction: column;
     width: 89.52%;
-    margin-top: 30px;
+    margin-top: 24px;
     margin-bottom: 168px;
+    letter-spacing: 0em;
 
     @include tablet-only {
         width: 86%;
-        margin-top: 30px;
+        margin-top: 25px;
         margin-bottom: 200px;
     }
 
@@ -19,7 +20,7 @@
     &__header {
         display: flex;
         flex-direction: column;
-        margin-top: 15px;
+        margin-top: 5px;
         width: 100%;
 
         @include tablet-only {
@@ -32,10 +33,11 @@
         &__presentation {
             display: flex;
             flex-direction: column;
+            width: 100%;
 
             @include tablet-only {
-                margin-top: 5px;
-                min-width: 50%;
+                width: auto;
+                justify-content: flex-end;
             }
 
             &__title {
@@ -69,7 +71,7 @@
             &__tags-wrapper {
                 display: flex;
                 gap: 10px;
-                margin-top: 12px;
+                margin-top: 10px;
 
                 @include tablet-only {
                     margin-top: 20px;
@@ -89,6 +91,10 @@
 
             @include tablet-only {
                 flex-direction: column;
+                gap: 24px;
+                width: auto;
+                max-width: 90%;
+                margin-top: 0;
                 align-items: flex-end;
             }
 
@@ -107,15 +113,14 @@
                     font-size: 12px;
                     font-weight: 500;
                     line-height: 17px;
-                    letter-spacing: 0em;
                     text-align: right;
-                    width: 80px;
+                    width: 63px;
                     color: $clr-primary;
 
                     @include tablet-only {
                         font-size: 18px;
                         line-height: 26px;
-                        width: 100px;
+                        width: 95px;
                     }
                 }
 
@@ -131,8 +136,6 @@
                         height: 64px;
                         width: 64px;
                     }
-
-
                 }
             }
 
@@ -184,17 +187,29 @@
                     border-radius: 10px;
                 }
 
+                //Style du header quand l'accordion est ouvert
+                &--opened {
+                    @include tablet-only {
+                        border-radius: 10px;
+                    }
+                }
+
+                //Titre de l'accordion avec la catégorie
                 &__category {
                     @include tablet-only {
+                        margin: 13px auto 13px 20px;
                         font-size: 18px;
                         line-height: 26px;
                     }
                 }
             }
 
+            //Contenu de l'accordion
             &__content {
-                @include tablet-only {
-                    border-radius: 10px;
+                &::after {
+                    @include tablet-only {
+                        border-radius: 10px;
+                    }
                 }
             }
         }
@@ -202,11 +217,10 @@
         //Accordion de type description
         .accordion:nth-of-type(1) {
             >.accordion__content {
-                padding: 15px 7px 50px 11px;
+                padding: 12px 7px 50px 11px;
 
                 @include tablet-only {
-                    padding: 30px 12px 53px 20px;
-                    font-family: Montserrat;
+                    padding: 35px 12px 53px 20px;
                     font-size: 18px;
                     line-height: 26px;
                 }
@@ -223,7 +237,7 @@
                 text-decoration: none;
 
                 @include tablet-only {
-                    padding: 20px 12px 27px 20px;
+                    padding: 25px 12px 27px 20px;
                     font-size: 18px;
                     line-height: 26px;
                 }

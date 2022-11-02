@@ -13,8 +13,8 @@ function Header() {
         <header className="header">
             <img className="header__logo" src={lightLogo} alt="logo de Kasa" />
             <nav className="header__nav">
-                <Link className="header__nav__link" to='/'>ACCUEIL</Link>
-                <Link className="header__nav__link" to='/about'>A PROPOS</Link>
+                <Link className="header__nav__link" to='/'>accueil</Link>
+                <Link className="header__nav__link" to='/about'>a propos</Link>
             </nav>
         </header>
     )

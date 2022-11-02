@@ -1,13 +1,12 @@
 /**
  * Gestion du component Accordion
  **/
-import arrowUp from '../../assets/arrow-up.svg'
 import { useState } from 'react';
 
 //props pour la fonction accordion
 type props = {
     category: string,
-    content: any,
+    content: string | Array<string> | null | undefined,
 }
 
 function Accordion({ category, content }: props) {
@@ -23,13 +22,13 @@ function Accordion({ category, content }: props) {
     return (
         <div className="accordion">
             {/* Titre de l'accordion avec la catégorie présentée */}
-            <div className="accordion__header" >
-                <span className="accordion__header__category">{category}</span>
-                <img className="accordion__header__icon" src={arrowUp} alt='icône de flèche' onClick={toggle} />
+            <div className={isOpen ? 'accordion__header--opened' : 'accordion__header'} onClick={toggle} data-testid='header'>
+                <span className="accordion__header__category" data-testid='category'>{category}</span>
+                {/* <img className="accordion__header__icon" src={arrowDown} alt='icône de flèche' /> */}
             </div>
 
             {/* Contenu présenté en fonction de la catégorie */}
-            {isOpen && <div className="accordion__content "  >
+            {isOpen && <div className="accordion__content " data-testid='content'   >
                 {category && category === 'Équipements' && Array.isArray(content) ?
                     <ul className="accordion__content__list">
                         {content &&

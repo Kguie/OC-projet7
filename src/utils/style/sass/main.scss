@@ -5,6 +5,7 @@
 //Utils
 @import './utils/mixins';
 @import './utils/variables';
+@import './utils/animations';
 
 //Base
 @import './base/global';
@@ -18,6 +19,7 @@
 @import '../../../components/error/error';
 @import '../../../components/tag/tag';
 @import '../../../components/carousel/carousel';
+@import '../../../components/banner/banner';
 
 
 

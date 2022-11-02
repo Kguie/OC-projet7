@@ -9,17 +9,15 @@
     flex-direction: column;
     width: 100%;
     letter-spacing: 0em;
+    align-items: center;
 
     &__logo {
         width: 122px;
         height: 39.44px;
         margin-top: 62px;
-        align-self: center;
 
         @include desktop-only {
-            align-self: flex-start;
-            margin-top: 85px;
-            margin-left: 49%;
+            margin-top: 66px;
         }
     }
 
@@ -29,9 +27,9 @@
         font-size: 12px;
         font-weight: 500;
         line-height: 17px;
-        align-self: center;
 
         @include tablet-only {
+            margin-top: 40px;
             font-size: 24px;
             line-height: 34px;
             margin-bottom: 30px;

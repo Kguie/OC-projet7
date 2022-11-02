@@ -1,0 +1,43 @@
+/**
+*Style des animations
+**/
+
+//Glissement vers la droite des photos du state animation du Carousel
+@keyframes rightSlide {
+    0% {
+        transform: translateX(0);
+
+    }
+
+    100% {
+
+        transform: translateX(100%);
+    }
+}
+
+//Glissement vers la gauche des photos du state animation du Carousel
+@keyframes leftSlide {
+    0% {
+
+        transform: translateX(0);
+    }
+
+    100% {
+
+        transform: translateX((-100%));
+    }
+}
+
+//Ouverture de l'accordion
+@keyframes openAccordion {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
