@@ -16,7 +16,7 @@ function About() {
 
     return (
         <section className="about">
-            {/* Banière sans texte */}
+            {/* Bannière sans texte */}
             <Banner text={null} />
             <div className="about__accordions-wrapper">
                 <Accordion category="Fiabilité"

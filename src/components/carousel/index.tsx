@@ -70,6 +70,9 @@ function Carousel({ pictures }: props) {
                 timer()
             }
         }
+        else {
+            return
+        }
     }
 
 
@@ -82,7 +85,7 @@ function Carousel({ pictures }: props) {
                     <img className='carousel__navigation--icon' src={arrowRight} alt='icône de flèche vers la droite' onClick={() => changePicture('next')} />
                 </span>}
 
-            {/* Mise en place des animation pour le carrousel selon le sens de navigation */}
+            {/* Mise en place des animation pour le carrousel vers la gauche */}
             {leftTransition && <span className='carousel__transition'>
 
                 {/* Ante est la photo avant le changement et post celle apres le changement */}
@@ -94,6 +97,7 @@ function Carousel({ pictures }: props) {
                     alt='Galerie' />
             </span>}
 
+            {/* Mise en place des animation pour le carrousel vers la droite */}
             {rightTransition && <span className='carousel__transition'>
                 <img className='carousel__transition__pictureR--ante'
                     src={pictureNumber <= 0 ? pictures[(pictures.length - 1)] : pictures[pictureNumber - 1]}

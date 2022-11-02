@@ -29,9 +29,9 @@ function Accordion({ category, content }: props) {
 
             {/* Contenu présenté en fonction de la catégorie */}
             {isOpen && <div className="accordion__content " data-testid='content'   >
-                {category && category === 'Équipements' && Array.isArray(content) ?
+                {category === 'Équipements' && Array.isArray(content) ?
                     <ul className="accordion__content__list">
-                        {content &&
+                        {
                             //Pour la catégorie équipements,une liste est créée après vérification que le contenu est bien un array
                             content.map((equipment: string, index: number) => (
                                 <li key={`equipment-${equipment}-index${index}`}                                                                    >
