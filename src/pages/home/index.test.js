@@ -7,8 +7,8 @@ import { screen } from "@testing-library/react"
 import { render } from "../../utils/test"
 
 describe('The Home component', () => {
-    test('Should render without crash', () => {
-        render(<Home />)
+    render(<Home />)
+    it('Should render without crash', () => {
         expect(screen.getByRole('heading', { level: 1, text: /chez vous/i })).toBeTruthy()
     })
 })

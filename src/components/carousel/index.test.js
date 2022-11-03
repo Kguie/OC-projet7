@@ -25,36 +25,39 @@ describe('The Carousel component', () => {
 
     })
 
-    // it('Should render all the pictures and be able to change with the icons', async () => {
-    //     render(
-    //         <Carousel pictures={pictures} />
-    //     )
+    it('Should render all the pictures and be able to change with the icons', async () => {
 
-    //     //Le component devrait afficher une 3 images(la photo et les 2 icônes)
-    //     expect(screen.getAllByRole('img').length).toEqual(3)
+        render(
+            <Carousel pictures={pictures} />
+        )
 
-    //     //La partie number devrait afficher 1/5
-    //     const numbers = screen.getByTestId('numbers')
-    //     expect(numbers.textContent).toBe('1/5')
+        //Le component devrait afficher une 3 images(la photo et les 2 icônes)
+        expect(screen.getAllByRole('img').length).toEqual(3)
 
-    //     const leftIcon = screen.getAllByRole('img')[0]
-    //     const rightIcon = screen.getAllByRole('img')[1]
+        //La partie number devrait afficher 1/5
+        const numbers = screen.getByTestId('numbers')
+        expect(numbers.textContent).toBe('1/5')
 
-    //     //En cliquant sur l’icône de droite,on passe à la photo 2
-    //     fireEvent.click(rightIcon)
-    //     expect(numbers.textContent).toBe('2/5')
+        const leftIcon = screen.getByTestId('left-arrow')
+        const rightIcon = screen.getByTestId('right-arrow')
 
-    //     //En cliquant sur l’icône de gauche,on repasse à la photo 1
-    //     fireEvent.click(leftIcon)
-    //     expect(numbers.textContent).toBe('1/5')
 
-    //     //En cliquant sur l’icône de gauche,on arrive à la photo 5
-    //     fireEvent.click(leftIcon)
-    //     expect(numbers.textContent).toBe('5/5')
+        //Utilisation de setTimeout() pour vérifier le contenu de numbers après la find e l'animation
+        //En cliquant sur l’icône de droite,on passe à la photo 2
+        fireEvent.click(rightIcon)
+        setTimeout(() => { expect(numbers.textContent).toBe('2/5') }, 600);
 
-    //     //En cliquant sur l’icône de droite,on revient à la photo 1
-    //     fireEvent.click(rightIcon)
-    //     expect(numbers.textContent).toBe('1/5')
+        //En cliquant sur l’icône de gauche,on repasse à la photo 1
+        fireEvent.click(leftIcon)
+        setTimeout(() => { expect(numbers.textContent).toBe('1/5') }, 600);
 
-    // })
+        //En cliquant sur l’icône de gauche,on arrive à la photo 5
+        fireEvent.click(leftIcon)
+        setTimeout(() => { expect(numbers.textContent).toBe('5/5') }, 600);
+
+        //En cliquant sur l’icône de droite,on revient à la photo 1
+        fireEvent.click(rightIcon)
+        setTimeout(() => { expect(numbers.textContent).toBe('1/5') }, 600);
+
+    })
 })

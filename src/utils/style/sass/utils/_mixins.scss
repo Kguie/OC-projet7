@@ -17,6 +17,12 @@
     }
 }
 
+//Taille écran pour changement de taille du component card
+@mixin card {
+    @media screen and (min-width: map-get($breakpoints, cards)) {
+        @content;
+    }
+}
 
 //Box-sizing
 @mixin box-sizing($box-model) {

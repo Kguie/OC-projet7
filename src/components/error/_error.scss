@@ -46,7 +46,7 @@
             margin-right: .5ch;
         }
 
-        @include desktop-only {
+        @include tablet-only {
             margin-top: 20px;
             font-size: 36px;
             line-height: 51px;

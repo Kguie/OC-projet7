@@ -51,7 +51,7 @@
 
             //Ajout de l'effet underline au survol avec le ::after
             &::after {
-                color: rgba($color: $clr-primary, $alpha: 0);
+                color: transparent;
                 text-decoration-line: underline;
                 text-decoration-color: $clr-primary;
                 left: -100%;

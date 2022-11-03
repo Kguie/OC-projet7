@@ -11,5 +11,6 @@ describe('Error', () => {
         render(<Error />)
         const expectedText = screen.getByText(/vous demandez n'existe pas/i)
         expect(expectedText).toBeInTheDocument()
+
     })
 })

@@ -4,20 +4,21 @@
 import { useState } from 'react';
 
 //props pour la fonction accordion
-type props = {
+type Props = {
     category: string,
     content: string | Array<string> | null | undefined,
 }
 
-function Accordion({ category, content }: props) {
+function Accordion({ category, content }: Props) {
 
     //State de l'ouverture de l'accordion
     const [isOpen, setIsOpen] = useState(false);
 
     /**
-     * Si l'accordion est fermé ,toggle l'ouvre,sinon il le ferme 
-     */
+   * Si l'accordion est fermé ,toggle l'ouvre,sinon il le ferme 
+   */
     const toggle = () => isOpen ? setIsOpen(false) : setIsOpen(true)
+
 
     return (
         <div className="accordion">

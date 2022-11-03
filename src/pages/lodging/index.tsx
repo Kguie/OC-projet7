@@ -63,23 +63,23 @@ function Lodging() {
                     {/* Notation */}
                     <div className="lodging__header__informations__rating">
                         <img className="lodging__header__informations__rating__icon"
-                            alt="icône d'étoile"
+                            alt="icône d'étoile de notation"
                             src={lodgingFound && parseInt(lodgingFound.rating) > 0 ? star : greyStar}
                         />
                         <img className="lodging__header__informations__rating__icon"
-                            alt="icône d'étoile"
+                            alt="icône d'étoile de notation"
                             src={lodgingFound && parseInt(lodgingFound.rating) > 1 ? star : greyStar}
                         />
                         <img className="lodging__header__informations__rating__icon"
-                            alt="icône d'étoile"
+                            alt="icône d'étoile de notation"
                             src={lodgingFound && parseInt(lodgingFound.rating) > 2 ? star : greyStar}
                         />
                         <img className="lodging__header__informations__rating__icon"
-                            alt="icône d'étoile"
+                            alt="icône d'étoile de notation"
                             src={lodgingFound && parseInt(lodgingFound.rating) > 3 ? star : greyStar}
                         />
                         <img className="lodging__header__informations__rating__icon"
-                            alt="icône d'étoile"
+                            alt="icône d'étoile de notation"
                             src={lodgingFound && parseInt(lodgingFound.rating) > 4 ? star : greyStar}
                         />
                     </div>

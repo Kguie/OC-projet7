@@ -18,13 +18,20 @@ describe('The Accordion function', () => {
         expect(screen.getByTestId('category').textContent).toBe('Test Category')
 
         const toggleBtn = screen.getByTestId('header')
-        const nonExpectedText = screen.queryByTestId('content')
-        expect(nonExpectedText).toBeNull()
+        const content = screen.queryByTestId('content')
+        expect(content).toBeNull()
 
+        //En cliquant sur le bouton,la division avec le texte apparaît 
         fireEvent.click(toggleBtn)
 
         const expectedText = screen.getByTestId('content')
         expect(expectedText.textContent).toBe('This is my test content')
+
+
+        //En cliquant une seconde fois,la division disparaît 
+        fireEvent.click(toggleBtn)
+
+        expect(content).toBeNull()
     })
 })
 

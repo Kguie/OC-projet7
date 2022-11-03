@@ -2,7 +2,7 @@
  * Gestion du component Tag
  **/
 
-type props = {
+type Props = {
     title: string,
 }
 
@@ -10,7 +10,7 @@ type props = {
  * Affiche le tag avec son titre au centre
  * @params {string} titre du tag
  */
-function Tag({ title }: props) {
+function Tag({ title }: Props) {
 
     return (
         <div className="tag">

@@ -7,7 +7,7 @@ import { useState } from 'react'
 
 
 
-type props = {
+type Props = {
     pictures: Array<string>
 }
 
@@ -16,7 +16,7 @@ type props = {
 /**
  * Affiche le component Carousel avec ces photos ainsi que les icônes de navigation, et l'affichage du numéro de photo
  */
-function Carousel({ pictures }: props) {
+function Carousel({ pictures }: Props) {
 
     //State pour le numéro de la photo qui sera affichée
     const [pictureNumber, setPictureNumber] = useState(0)
@@ -39,7 +39,7 @@ function Carousel({ pictures }: props) {
             }, 600);
         }
 
-        //Si une transition est déjà en cours,la fonction s'arrête
+        //Si une transition est déjà en cours,la fonction s'arrête là
         if (leftTransition || rightTransition) {
             return
         }
@@ -80,9 +80,9 @@ function Carousel({ pictures }: props) {
         <div className="carousel">
             {pictures.length > 1 &&
                 <span className='carousel__navigation'>
-                    < img className='carousel__navigation--icon' src={arrowLeft} alt='icône de flèche vers la gauche' onClick={() => changePicture('previous')} />
+                    < img className='carousel__navigation--icon' src={arrowLeft} alt='icône de flèche vers la gauche' onClick={() => changePicture('previous')} data-testid="left-arrow" />
                     <span className='carousel__navigation__number' data-testid="numbers" >{`${pictureNumber + 1}/${pictures.length}`}</span>
-                    <img className='carousel__navigation--icon' src={arrowRight} alt='icône de flèche vers la droite' onClick={() => changePicture('next')} />
+                    <img className='carousel__navigation--icon' src={arrowRight} alt='icône de flèche vers la droite' onClick={() => changePicture('next')} data-testid="right-arrow" />
                 </span>}
 
             {/* Mise en place des animation pour le carrousel vers la gauche */}

@@ -4,7 +4,7 @@
 import { Link } from "react-router-dom"
 import cardDefault from '../../assets/card-default.png'
 
-type props = {
+type Props = {
     cover: string,
     title: string,
     id: string
@@ -13,7 +13,7 @@ type props = {
 /**
  * Affiche le component Card,constitué du titre de la location, et de sa photo
  */
-function Card({ cover = `${cardDefault}`, title = `Titre de la location`, id }: props) {
+function Card({ cover = `${cardDefault}`, title = `Titre de la location`, id }: Props) {
 
 
     return (

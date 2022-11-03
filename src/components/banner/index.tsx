@@ -2,7 +2,7 @@
  * Gestion du Component Banner 
  **/
 
-type props = {
+type Props = {
     text: string | null | undefined
 }
 
@@ -11,7 +11,7 @@ type props = {
  * Affiche la bannière avec la photo ajouté en background via le css ,avec un texte si présent 
  * @param {string|null} texte à afficher ou rien 
  */
-function Banner({ text }: props) {
+function Banner({ text }: Props) {
 
     return (
         <div className="banner">

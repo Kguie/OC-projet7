@@ -6,11 +6,9 @@ import About from '.'
 import { screen, fireEvent } from '@testing-library/react'
 import { render } from '../../utils/test'
 
-
-
 //Tests de l'accordion avec le contenu de la page about
 describe('About and accordion', () => {
-    test('Should render without crash', async () => {
+    it('Should render without crash', async () => {
         render(
             <About />
         )
