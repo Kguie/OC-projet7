@@ -1,14 +1,14 @@
 /**
- * Gestion des tests au niveau du component Accordion
+ * Gestion des tests au niveau du component Collapse
  **/
 
-import Accordion from './'
+import Collapse from '.'
 import { screen, fireEvent } from '@testing-library/react'
 import { render } from '../../utils/test'
 
-describe('The Accordion function', () => {
+describe('The Collapse function', () => {
     render(
-        <Accordion
+        <Collapse
             category='Test Category'
             content="This is my test content"
         />

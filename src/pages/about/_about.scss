@@ -33,7 +33,7 @@
 
     }
 
-    &__accordions-wrapper {
+    &__collapses-wrapper {
         @include center-box;
         flex-direction: column;
         margin-top: 15px;
@@ -46,8 +46,8 @@
             gap: 31px;
         }
 
-        //Accordions dans About
-        .accordion {
+        //Collapses dans About
+        .collapse {
             &__header {
                 &__category {
                     @include tablet-only {

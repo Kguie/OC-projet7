@@ -163,8 +163,8 @@
 
     }
 
-    //Partie avec les accordions
-    &__accordions-wrapper {
+    //Partie avec les collapses
+    &__collapses-wrapper {
         margin-top: 16px;
         display: flex;
         flex-direction: column;
@@ -176,7 +176,7 @@
             justify-content: space-between;
         }
 
-        .accordion {
+        .collapse {
             width: 100%;
 
             @include tablet-only {
@@ -188,14 +188,14 @@
                     border-radius: 10px;
                 }
 
-                //Style du header quand l'accordion est ouvert
+                //Style du header quand l'collapse est ouvert
                 &--opened {
                     @include tablet-only {
                         border-radius: 10px;
                     }
                 }
 
-                //Titre de l'accordion avec la catégorie
+                //Titre de l'collapse avec la catégorie
                 &__category {
                     @include tablet-only {
                         margin: 13px auto 13px 20px;
@@ -205,7 +205,7 @@
                 }
             }
 
-            //Contenu de l'accordion
+            //Contenu de l'collapse
             &__content {
                 &::after {
                     @include tablet-only {
@@ -215,9 +215,9 @@
             }
         }
 
-        //Accordion de type description
-        .accordion:nth-of-type(1) {
-            >.accordion__content {
+        //Collapse de type description
+        .collapse:nth-of-type(1) {
+            >.collapse__content {
                 padding: 12px 7px 50px 11px;
 
                 @include tablet-only {
@@ -228,9 +228,9 @@
             }
         }
 
-        //Accordion de type équipements
-        .accordion:nth-of-type(2) {
-            >.accordion__content {
+        //Collapse de type équipements
+        .collapse:nth-of-type(2) {
+            >.collapse__content {
                 padding: 16px 7px 2px 11px;
                 font-size: 12px;
                 font-weight: 400;

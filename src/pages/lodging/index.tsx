@@ -4,8 +4,8 @@
 import { useParams } from "react-router-dom"
 import star from "../../assets/star.svg"
 import greyStar from "../../assets/starG.svg"
-import Carousel from "../../components/carousel"
-import Accordion from "../../components/accordion"
+import Gallery from "../../components/gallery"
+import Collapse from "../../components/collapse"
 import Tag from "../../components/tag"
 import { useGetLodgingById } from "../../utils/hooks"
 import { useEffect } from "react"
@@ -29,8 +29,8 @@ function Lodging() {
 
         <section className="lodging">
 
-            {/* Intégration du Component Carousel */}
-            <Carousel pictures={lodgingFound && lodgingFound.pictures ? lodgingFound.pictures : []} />
+            {/* Intégration du Component Gallery */}
+            <Gallery pictures={lodgingFound && lodgingFound.pictures ? lodgingFound.pictures : []} />
 
             <div className="lodging__header">
                 <div className="lodging__header__presentation">
@@ -86,10 +86,10 @@ function Lodging() {
                 </div>
             </div>
 
-            {/* Utilisation des accordions avec une liste pour équipements gérée dans le component  */}
-            <div className="lodging__accordions-wrapper">
-                <Accordion category="Description" content={lodgingFound && lodgingFound.description} />
-                <Accordion category="Équipements" content={lodgingFound && lodgingFound.equipments} />
+            {/* Utilisation des collapses avec une liste pour équipements gérée dans le component  */}
+            <div className="lodging__collapses-wrapper">
+                <Collapse category="Description" content={lodgingFound && lodgingFound.description} />
+                <Collapse category="Équipements" content={lodgingFound && lodgingFound.equipments} />
             </div>
         </section>
     )

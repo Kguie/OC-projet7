@@ -1,37 +1,37 @@
 /**
- * Gestion du component Accordion
+ * Gestion du component Collapse
  **/
 import { useState } from 'react';
 
-//props pour la fonction accordion
+//props pour la fonction collapse
 type Props = {
     category: string,
     content: string | Array<string> | null | undefined,
 }
 
-function Accordion({ category, content }: Props) {
+function Collapse({ category, content }: Props) {
 
-    //State de l'ouverture de l'accordion
+    //State de l'ouverture de Collapse
     const [isOpen, setIsOpen] = useState(false);
 
     /**
-   * Si l'accordion est fermé ,toggle l'ouvre,sinon il le ferme 
+   * Si Collapse est fermé ,toggle l'ouvre,sinon il le ferme 
    */
     const toggle = () => isOpen ? setIsOpen(false) : setIsOpen(true)
 
 
     return (
-        <div className="accordion">
-            {/* Titre de l'accordion avec la catégorie présentée */}
-            <div className={isOpen ? 'accordion__header--opened' : 'accordion__header'} onClick={toggle} data-testid='header'>
-                <span className="accordion__header__category" data-testid='category'>{category}</span>
-                {/* <img className="accordion__header__icon" src={arrowDown} alt='icône de flèche' /> */}
+        <div className="collapse">
+            {/* Titre de Collapse avec la catégorie présentée */}
+            <div className={isOpen ? 'collapse__header--opened' : 'collapse__header'} onClick={toggle} data-testid='header'>
+                <span className="collapse__header__category" data-testid='category'>{category}</span>
+                {/* <img className="collapse__header__icon" src={arrowDown} alt='icône de flèche' /> */}
             </div>
 
             {/* Contenu présenté en fonction de la catégorie */}
-            {isOpen && <div className="accordion__content " data-testid='content'   >
+            {isOpen && <div className="collapse__content " data-testid='content'   >
                 {category === 'Équipements' && Array.isArray(content) ?
-                    <ul className="accordion__content__list">
+                    <ul className="collapse__content__list">
                         {
                             //Pour la catégorie équipements,une liste est créée après vérification que le contenu est bien un array
                             content.map((equipment: string, index: number) => (
@@ -42,7 +42,7 @@ function Accordion({ category, content }: Props) {
 
                         }
                     </ul>
-                    : <span className="accordion__content__text " data-testid='accordion'>
+                    : <span className="collapse__content__text " data-testid='collapse'>
                         {content && content}
                     </span>
                 }
@@ -52,4 +52,4 @@ function Accordion({ category, content }: Props) {
 
 }
 
-export default Accordion
+export default Collapse

@@ -1,21 +1,21 @@
 /**
- * Tests du component Carousel
+ * Tests du component Gallery
  **/
 
-import Carousel from '.'
+import Gallery from '.'
 import { screen, fireEvent } from '@testing-library/react'
 import { render } from '../../utils/test'
 
 
 
-describe('The Carousel component', () => {
+describe('The Gallery component', () => {
 
     const pictures = ['myPicture1', 'myPicture2', 'myPicture3', 'myPicture4', 'myPicture5']
     const onePicture = ["myPicture1"]
 
     it('Should render without crash and without the navigation div', async () => {
         render(
-            <Carousel pictures={onePicture} />
+            <Gallery pictures={onePicture} />
         )
 
         //Le component ne devrait être constitué d'une seule image, la photo du carrousel et donc d’aucune icône
@@ -28,7 +28,7 @@ describe('The Carousel component', () => {
     it('Should render all the pictures and be able to change with the icons', async () => {
 
         render(
-            <Carousel pictures={pictures} />
+            <Gallery pictures={pictures} />
         )
 
         //Le component devrait afficher une 3 images(la photo et les 2 icônes)

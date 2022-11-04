@@ -1,15 +1,15 @@
 /**
-*Style de l'accordion
+*Style de collapse
 **/
 
-.accordion {
+.collapse {
     display: flex;
     flex-direction: column;
     width: 100%;
     overflow: hidden;
     letter-spacing: 0em;
 
-    //Header de l'accordion sur lequel on doit cliquer
+    //Header de collapse sur lequel on doit cliquer
     &__header {
         display: flex;
         justify-content: space-between;
@@ -84,7 +84,7 @@
         }
     }
 
-    //Contenu de l'accordion
+    //Contenu de collapse
     &__content {
 
         width: 100%;
