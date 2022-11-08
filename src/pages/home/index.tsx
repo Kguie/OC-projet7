@@ -3,8 +3,9 @@
  **/
 import Card from "../../components/card";
 import Banner from "../../components/banner";
-import lodgingData from "../../data/logements.json"
 import { useEffect } from "react";
+import { useGetLodgingData } from "../../utils/hooks";
+import Loader from "../../utils/style/loader";
 
 /**
  * Affiche la page d'accueil 
@@ -16,6 +17,9 @@ function Home() {
     document.title = ' Accueil'
   }, [])
 
+  const { data, isLoading } = useGetLodgingData('http://localhost:8000/api/lodgings/')
+  const lodgingData = data && Array.isArray(data) && data
+
   return (
     <section className="home">
       <Banner text="Chez vous, partout et ailleurs" />
@@ -24,14 +28,15 @@ function Home() {
       <div className="home__cards-wrapper">
 
         {/* Récupération des données et map pour la création de chaque carte */}
-        {lodgingData && lodgingData.map((lodging: any) => (
-          <Card
-            key={`lodging-${lodging.id}`}
-            id={lodging.id}
-            cover={lodging.cover}
-            title={lodging.title}
-          />
-        ))}
+        {isLoading ? <Loader /> :
+          lodgingData && lodgingData.map((lodging: any) => (
+            <Card
+              key={`lodging-${lodging._id}`}
+              id={lodging._id}
+              cover={lodging.cover}
+              title={lodging.title}
+            />
+          ))}
       </div>
     </section>
   );

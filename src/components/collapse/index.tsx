@@ -2,6 +2,7 @@
  * Gestion du component Collapse
  **/
 import { useState } from 'react';
+import * as ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 //props pour la fonction collapse
 type Props = {
@@ -29,7 +30,7 @@ function Collapse({ category, content }: Props) {
             </div>
 
             {/* Contenu présenté en fonction de la catégorie */}
-            {isOpen && <div className="collapse__content " data-testid='content'   >
+            {isOpen && <div className="collapse__content " data-testid='content' >
                 {category === 'Équipements' && Array.isArray(content) ?
                     <ul className="collapse__content__list">
                         {

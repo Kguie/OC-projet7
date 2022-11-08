@@ -8,10 +8,8 @@ import { useState } from 'react'
 
 
 type Props = {
-    pictures: Array<string>
+    pictures: Array<string>,
 }
-
-
 
 /**
  * Affiche le component Gallery avec ces photos ainsi que les icônes de navigation, et l'affichage du numéro de photo

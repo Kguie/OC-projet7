@@ -15,7 +15,7 @@
     }
 }
 
-//Glissement vers la gauche des photos du state animation du Carousel
+//Glissement vers la gauche des photos du state animation de Gallery
 @keyframes leftSlide {
     0% {
 
@@ -28,7 +28,7 @@
     }
 }
 
-//Ouverture de l'accordion
+//Ouverture de Collapse
 @keyframes openAccordion {
     0% {
         opacity: 0;
@@ -39,5 +39,17 @@
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+
+//Rotation du loader
+@keyframes fullRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
     }
 }

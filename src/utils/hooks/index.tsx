@@ -2,31 +2,44 @@
  * Gestion des hooks custom
  **/
 
-import { useEffect, } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
-import lodgingData from '../../data/logements.json'
-
+import axios from 'axios';
 
 /**
- * Récupère les données d'un logement en fonction de l'id renseigné, tout en redirigeant l'utilisateur vers la page d'erreur si il rentre un mauvais id
- * @param {string} id du logement 
- * @returns {object|error} les données du logement ou redirection vers la page erreur 
+ * Récupère les données de tous les logements,ou renvoie sur la page d'erreur 
+ * @param {String} url de l'api utilisé
+ * @returns {object|error} les données de tous les logements ou redirection vers la page erreur
  */
-export function useGetLodgingById(id: string | null | undefined) {
-    const lodgingFound = lodgingData.find((lodging,) => lodging.id === id);
+export function useGetLodgingData(url: string) {
+    const [data, setData] = useState({} || [])
+    const [isLoading, setLoading] = useState(true)
     const navigate = useNavigate();
 
     useEffect(() => {
+        if (!url) return
+        setLoading(true)
+        async function getData() {
+            try {
+                const response = await axios.get(url);
+                if (!response) {
+                    navigate("/error")
+                }
+                else {
+                    setData(response.data)
+                }
 
-        //L'id rentré en argument n'est pas retrouvé dans la base de données
-        if (!lodgingFound) {
-
-            navigate("/error");
+            } catch (error) {
+                console.error(error);
+                navigate("/error")
+            }
+            finally {
+                setLoading(false)
+            }
         }
-    }, [lodgingFound, navigate]);
-
-    //L'id retrouvé dans las basse de données est retourné
-    if (lodgingFound) {
-        return lodgingFound
-    }
+        getData()
+    }, [navigate, url])
+    return { isLoading, data }
 }
+
+
