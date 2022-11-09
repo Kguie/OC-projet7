@@ -41,7 +41,7 @@ Démarrer le projet React et développer l’ensemble de l’application, les co
 
 ### Back end ###
 
-Pour l'instant, data stockée dans fichier data.json, présent dans le frontend.
+La partie backend  a été réalisée, vous pourrez trouvez [ici le repository ](https://github.com/Kguie/kasa-backend.git).
 
 ### Front-end installation ###
 
