@@ -20,9 +20,9 @@ export function MyRouter() {
         <BrowserRouter>
             <Header />
             <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/about' element={<About />} />
-                <Route path='/lodging/:id' element={<Lodging />} />
+                <Route path='/OC-projet7/' element={<Home />} />
+                <Route path='/OC-projet7/about' element={<About />} />
+                <Route path='/OC-projet7/lodging/:id' element={<Lodging />} />
 
                 {/* Ajout d'une route error pour les routes non répertoriées */}
                 <Route element={<Error />} path='*' />
