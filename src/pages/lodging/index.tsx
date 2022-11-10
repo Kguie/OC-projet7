@@ -20,7 +20,7 @@ function Lodging() {
     const { id } = useParams()
 
     //Récupération des données du logement recherché avec l'id et redirection vers la page d'erreur si l'id n'est pas retrouvé
-    let { data, isLoading } = useGetLodgingData(`http://localhost:8000/api/lodgings/${id}`)
+    let { data, isLoading } = useGetLodgingData(`https://kguie-test-app.herokuapp.com/api/lodgings/${id}`)
 
     const lodgingFound: any = data && data
 

@@ -17,7 +17,7 @@ function Home() {
     document.title = ' Accueil'
   }, [])
 
-  const { data, isLoading } = useGetLodgingData('http://localhost:8000/api/lodgings/')
+  const { data, isLoading } = useGetLodgingData('https://kguie-test-app.herokuapp.com/api/lodgings/')
   const lodgingData = data && Array.isArray(data) && data
 
   return (
