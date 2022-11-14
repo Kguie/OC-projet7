@@ -41,7 +41,8 @@ Démarrer le projet React et développer l’ensemble de l’application, les co
 
 ### Back end ###
 
-La partie backend  a été réalisée, vous pourrez trouvez [ici le repository ](https://github.com/Kguie/kasa-backend.git).
+La partie backend  a été réalisée, vous pourrez trouvez [ici le repository ](https://github.com/Kguie/kasa-backend.git) et cette partie est hébergée sur vercel.
+Le front-end est donc directement utilisable
 
 ### Front-end installation ###
 

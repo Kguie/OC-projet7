@@ -17,9 +17,8 @@ function Home() {
     document.title = ' Accueil'
   }, [])
 
-  const { data, isLoading } = useGetLodgingData('https://vercel-api-kguie.vercel.app/api/lodgings/')
+  const { data, isLoading } = useGetLodgingData('https://vercel-api-kguie.vercel.app/api/lodgings')
   const lodgingData = data && Array.isArray(data) && data
-
   return (
     <section className="home">
       <Banner text="Chez vous, partout et ailleurs" />
