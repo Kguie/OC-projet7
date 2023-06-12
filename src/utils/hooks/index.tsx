@@ -26,7 +26,7 @@ export function useGetLodgingData(url: string) {
                     navigate("/error")
                 }
                 else {
-                    setData(response.data.lodgings)
+                    setData(response.data)
                 }
 
             } catch (error) {
