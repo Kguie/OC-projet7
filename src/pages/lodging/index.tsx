@@ -19,8 +19,9 @@ function Lodging() {
     //Récupération de l'id   
     const { id } = useParams()
 
+    const url: string = `${process.env.REACT_APP_API}/lodgings/${id}`;
     //Récupération des données du logement recherché avec l'id et redirection vers la page d'erreur si l'id n'est pas retrouvé
-    let { data, isLoading } = useGetLodgingData(process.env.API_URL + "api/lodgings/" + id);
+    let { data, isLoading } = useGetLodgingData(url);
 
     const lodgingFound: any = data && data
 

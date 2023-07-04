@@ -16,8 +16,8 @@ function Home() {
   useEffect(() => {
     document.title = ' Accueil'
   }, [])
-
-  const { data, isLoading } = useGetLodgingData(process.env.API_URL + 'api/lodgings/')
+  const url: string = `${process.env.REACT_APP_API}/lodgings/`;
+  const { data, isLoading } = useGetLodgingData(url);
   const lodgingData = data && Array.isArray(data) && data
 
   return (
