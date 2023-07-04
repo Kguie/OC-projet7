@@ -2,7 +2,6 @@
  * Gestion du component Collapse
  **/
 import { useState } from 'react';
-import * as ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 //props pour la fonction collapse
 type Props = {

@@ -2,6 +2,7 @@
 
  Ce projet correspond au projet 7 de la formation développeur Web de OPENCLASSROOMS.
 
+
 ## Table des Matières
 
 - [Introduction](#introduction)
@@ -10,11 +11,12 @@
 - [Structure du Projet](#structure-du-projet)
 - [Auteurs](#auteurs)
 - [Exigences fonctionnelles](#exigences-fonctionnelles)
-- [Outils et contraintes techniques](#outils-et-contraintes-techniques) 
+- [Outils et contraintes techniques](#outils-et-contraintes-techniques)
 
-## Introduction
 
-Le projet a pour but démarrer le projet React et développer l’ensemble de l’application, les composants React, les routes React Router, en suivant les maquettes Figma responsive (https://www.figma.com/file/bAnXDNqRKCRRP8mY2gcb5p/UI-Design-Kasa-FR?node-id=3%3A0).
+## Introduction 
+
+L'objectif ici est de démarrer le projet React et développer l’ensemble de l’application, les composants React, les routes React Router, en suivant les maquettes Figma responsive (https://www.figma.com/file/bAnXDNqRKCRRP8mY2gcb5p/UI-Design-Kasa-FR?node-id=3%3A0).
 
 
 ## Installation
@@ -25,23 +27,24 @@ Le projet a pour but démarrer le projet React et développer l’ensemble de l�
 ## Utilisation
 
 - Utiliser  `yarn start` pour lancer nodemon server.
-- L'API est en écoute sur [http://localhost:3000](http://localhost:3000).
+- À utiliser de paire avec l'API OC-projet-7-backend.
+
 
 ## Structure du Projet
 
-- src/assets/               # Dossier contenant les images
-- src/components/           # Dossier contenant les components
-- src/pages                 # Contient les pages
-- utils/hooks/              # Contient les hooks
-- utils/router              # Contient le router  
-- utils/style/loader        # Contient le 
-- utils/style/sass          # Contient les fichiers sass
-- utils/test                # Contient le composant nécessaire aux tests
-- index.tsx                 # Entrée  
+- src/assets/           # Dossier contenant les images
+- src/components/       # Dossier contenant les composants
+- src/pages/            # Contient les pages
+- src/utils/hooks/      # Contient les hooks
+- src/utils/routes/     # Contient les routes  
+- src/utils/style       # Contient le loader et le dossier sass
+- src/utils/test        # Contient le module de test
+- index.tsx             # Entrée    
 
 ## Auteurs
 
 - [GUIEBA Kévin](https://github.com/Kguie/)
+
 
 ## Exigences fonctionnelles ##
 
@@ -77,3 +80,5 @@ Le projet a pour but démarrer le projet React et développer l’ensemble de l�
 - Il existe une page par route.
 - La page 404 est renvoyée pour chaque route inexistante, ou si une valeur présente dans l’URL ne fait pas partie des données renseignées.
 - La logique du routeur est réunie dans un seul fichier.
+
+
